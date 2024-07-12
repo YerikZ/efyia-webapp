@@ -4,9 +4,9 @@ export const API_KEY = `${process.env.NEXT_PUBLIC_APP_KEY}`
 export const API_URL = `${process.env.NEXT_PUBLIC_API_URL}`
 export const IS_WORKFLOW = `${process.env.NEXT_PUBLIC_APP_TYPE_WORKFLOW}` === 'true'
 export const APP_INFO: AppInfo = {
-  title: 'Dify UI Test App',
-  description: 'App description',
-  copyright: '',
+  title: 'Efyia Resume',
+  description: 'AI-powered resume builder and reviewer optimising your CV for job applications with personalised content suggestions',
+  copyright: 'efyia.ai',
   privacy_policy: '',
   default_language: 'en',
 }
