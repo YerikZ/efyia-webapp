@@ -5,7 +5,7 @@ import cn from 'classnames'
 import { useBoolean, useClickAway } from 'ahooks'
 import { XMarkIcon } from '@heroicons/react/24/outline'
 import RunOnce from './run-once'
-import RunBatch from './run-batch'
+// import RunBatch from './run-batch'
 import ResDownload from './run-batch/res-download'
 import Result from './result'
 import Button from './base/button'
@@ -52,7 +52,7 @@ const TextGeneration = () => {
   const [currTab, setCurrTab] = useState<string>('create')
   // Notice this situation isCallBatchAPI but not in batch tab
   const [isCallBatchAPI, setIsCallBatchAPI] = useState(false)
-  const isInBatchTab = currTab === 'batch'
+  // const isInBatchTab = currTab === 'batch'
 
   /*
   * app info
@@ -500,7 +500,7 @@ const TextGeneration = () => {
           <TabHeader
             items={[
               { id: 'create', name: t('app.generation.tabs.create') },
-              { id: 'batch', name: t('app.generation.tabs.batch') },
+              // { id: 'batch', name: t('app.generation.tabs.batch') },
             ]}
             value={currTab}
             onChange={setCurrTab}
@@ -517,13 +517,13 @@ const TextGeneration = () => {
                 onVisionFilesChange={setCompletionFiles}
               />
             </div>
-            <div className={cn(isInBatchTab ? 'block' : 'hidden')}>
+            {/* <div className={cn(isInBatchTab ? 'block' : 'hidden')}>
               <RunBatch
                 vars={promptConfig.prompt_variables}
                 onSend={handleRunBatch}
                 isAllFinished={allTaskRuned}
               />
-            </div>
+            </div> */}
           </div>
 
           {/* copyright */}
