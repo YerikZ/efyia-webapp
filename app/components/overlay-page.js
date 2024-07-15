@@ -35,7 +35,7 @@ const Overlay = ({ onAccessGranted }) => {
           placeholder="Enter Access Code"
         />
         <div>{error && <p style={errorStyle}>{error}</p>}</div>
-        <div style={buttonStyle}><button type="submit">Submit</button></div>
+        <div><button style={buttonStyle} type="submit">Submit</button></div>
       </form>
     </div>
   );
@@ -73,7 +73,7 @@ const buttonStyle = {
   padding: '10px 20px',
   borderRadius: '5px',
   border: 'none',
-  backgroundColor: '#007BFF',
+  backgroundColor: '#2596be',
   color: 'white',
   cursor: 'pointer',
 };
