@@ -12,7 +12,7 @@ const Overlay = ({ onAccessGranted }) => {
 
       const accessCodesList = accessCodes.split(',');
       // console.log('Access Codes:', accessCodes);
-      // console.log('Access Code Entered:', accessCode);
+      console.log('Access Code Entered:', accessCode);
       // console.log('Access Codes List:', accessCodesList);
       if (accessCodesList.includes(accessCode)) {
         onAccessGranted();
