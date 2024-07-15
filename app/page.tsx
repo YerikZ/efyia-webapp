@@ -1,7 +1,7 @@
 "use client";
 
 import Main from '@/app/components'
-import React, {useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import Overlay from '@/app/components/overlay-page'
 
 const App = () => {
@@ -53,9 +53,9 @@ const App = () => {
   }
 
   return (
-    <div>      
-      <div className="countdown-timer">
-        Session expires in: {formatTime(countdown)}        
+    <div>
+      <div className="countdown-timer" style={{ textAlign: 'center' }}>
+        Session expires in: {formatTime(countdown)}
       </div>
       <Main />
     </div>
