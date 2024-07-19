@@ -3,6 +3,7 @@
 import Main from '@/app/components'
 import React, { useState, useEffect } from 'react';
 import Overlay from '@/app/components/overlay-page'
+import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
 
@@ -58,6 +59,7 @@ const App = () => {
         Session expires in: {formatTime(countdown)}
       </div>
       <Main />
+      <Analytics />
     </div>
   );
 }
