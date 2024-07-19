@@ -4,6 +4,7 @@ import { ACCESS_CODES } from '@/config';
 const Overlay = ({ onAccessGranted }) => {
   const [accessCode, setAccessCode] = useState('');
   const [error, setError] = useState('');
+  const [isCodeVisible, setIsCodeVisible] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,16 +25,23 @@ const Overlay = ({ onAccessGranted }) => {
     }
   };
 
+  const toggleVisibility = () => {
+    setIsCodeVisible(!isCodeVisible);
+  };
+
   return (
     <div className="overlay" style={overlayStyle}>
       <form onSubmit={handleSubmit} style={formStyle}>
         <input
-          type="text"
+          type={isCodeVisible ? "text" : "password"}
           value={accessCode}
           onChange={(e) => setAccessCode(e.target.value)}
           style={inputStyle}
           placeholder="Enter Access Code"
         />
+        <button type="button" onClick={toggleVisibility} style={toggleButtonStyle}>
+          {isCodeVisible ? "Hide" : "Show"}
+        </button>
         <div>{error && <p style={errorStyle}>{error}</p>}</div>
         <div><button style={buttonStyle} type="submit">Submit</button></div>
       </form>
@@ -76,6 +84,19 @@ const buttonStyle = {
   backgroundColor: '#2596be',
   color: 'white',
   cursor: 'pointer',
+};
+
+const toggleButtonStyle = {
+  backgroundColor: '#f0f0f0', // light gray background
+  border: 'none', // no border
+  borderRadius: '4px', // slightly rounded corners
+  padding: '5px 10px', // padding for a comfortable click area
+  margin: '15px 10px', // margin to separate from other elements
+  cursor: 'pointer', // pointer cursor on hover
+  fontSize: '14px', // font size
+  color: '#333', // dark gray text
+  boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)', // subtle shadow for depth
+  transition: 'background-color 0.3s', // smooth transition for background color
 };
 
 const errorStyle = {
