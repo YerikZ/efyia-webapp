@@ -6,9 +6,11 @@ export const IS_WORKFLOW = `${process.env.NEXT_PUBLIC_APP_TYPE_WORKFLOW}` === 't
 export const ACCESS_CODES = `${process.env.NEXT_PUBLIC_APP_ACCESS_CODES}`
 export const APP_INFO: AppInfo = {
   title: 'Efyia Resume',
-  description: 'AI-powered resume builder and reviewer optimising your CV for job applications with personalised content suggestions',
+  description: `AI-powered resume builder and reviewer optimising your CV for job applications with personalised content suggestions. 
+                AI can make mistakes and fabricate content. Results should be reviewed to ensure accuracy and suitability.
+                Use at your own risk.`,
   copyright: 'efyia.ai',
-  privacy_policy: '',
+  privacy_policy: 'https://dify.ai/privacy',
   default_language: 'en',
 }
 
