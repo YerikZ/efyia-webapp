@@ -6,16 +6,28 @@ const Overlay = ({ onAccessGranted }) => {
   const [error, setError] = useState('');
   const [isCodeVisible, setIsCodeVisible] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const accessCodes = ACCESS_CODES;
     if (accessCodes) {
 
       const accessCodesList = accessCodes.split(',');
       // console.log('Access Codes:', accessCodes);
-      console.log('Access Code Entered:', accessCode);
+      // console.log('Access Code Entered:', accessCode);
       // console.log('Access Codes List:', accessCodesList);
       if (accessCodesList.includes(accessCode)) {
+
+        const response = await fetch('/api/log-access', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            accessCode,
+            timestamp: new Date().toISOString()
+          }),
+        });
+
         onAccessGranted();
       } else {
         setError('Invalid access code');
