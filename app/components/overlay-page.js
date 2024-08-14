@@ -41,8 +41,10 @@ const Overlay = ({ onAccessGranted }) => {
     setIsCodeVisible(!isCodeVisible);
   };
 
-  return (
+  return (    
     <div className="overlay" style={overlayStyle}>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8513645014161900"
+        crossorigin="anonymous"></script>
       <form onSubmit={handleSubmit} style={formStyle}>
         <input
           type={isCodeVisible ? "text" : "password"}

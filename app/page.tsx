@@ -50,18 +50,20 @@ const App = () => {
     return <Overlay onAccessGranted={() => setIsAccessGranted(true)} />;
   }
 
-  if (!isAccessGranted) {
-    return <Overlay onAccessGranted={() => setIsAccessGranted(true)} />;
-  }
+  // if (!isAccessGranted) {
+  //   return <Overlay onAccessGranted={() => setIsAccessGranted(true)} />;
+  // }
 
   return (
-    <div>
+    <div>            
       <div className="countdown-timer" style={{ textAlign: 'center' }}>
         Session expires in: {formatTime(countdown)}
       </div>
       <div className="instructions" style={{ textAlign: 'center' }}>
         <InstructionsPopup />
       </div>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8513645014161900"
+        crossOrigin="anonymous"></script>
       <Main />
       <Analytics />
     </div>
