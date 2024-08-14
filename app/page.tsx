@@ -62,8 +62,6 @@ const App = () => {
       <div className="instructions" style={{ textAlign: 'center' }}>
         <InstructionsPopup />
       </div>
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8513645014161900"
-        crossOrigin="anonymous"></script>
       <Main />
       <Analytics />
     </div>
