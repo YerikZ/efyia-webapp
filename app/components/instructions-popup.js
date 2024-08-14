@@ -15,8 +15,9 @@ const InstructionsPopup = () => {
 
   return (
     <div>
-      <div onClick={handleIconClick} style={{ cursor: 'pointer' }}>
-        <FontAwesomeIcon icon={faInfoCircle} /> <span>Read Tips</span>
+      <div onClick={handleIconClick} style={instructionElementStyles}>
+        <FontAwesomeIcon icon={faInfoCircle} size='xs' />
+        <span style={{ fontSize: "13px", padding: '2px 2px 2px 5px' }}>Click to read tips</span>
       </div>
 
       {showPopup && (
@@ -38,6 +39,12 @@ const InstructionsPopup = () => {
       )}
     </div>
   );
+};
+
+//
+const instructionElementStyles = {
+  cursor: 'pointer',
+  display: 'inline-block'
 };
 
 // Basic styles for the popup
