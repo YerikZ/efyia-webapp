@@ -2,7 +2,8 @@
 
 import Main from '@/app/components'
 import React, { useState, useEffect } from 'react';
-import Overlay from '@/app/components/overlay-page'
+import Overlay from '@/app/components/overlay-page';
+import InstructionsPopup from '@/app/components/instructions-popup';
 import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
@@ -57,6 +58,9 @@ const App = () => {
     <div>
       <div className="countdown-timer" style={{ textAlign: 'center' }}>
         Session expires in: {formatTime(countdown)}
+      </div>
+      <div className="instructions" style={{ textAlign: 'center' }}>
+        <InstructionsPopup />
       </div>
       <Main />
       <Analytics />
