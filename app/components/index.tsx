@@ -478,7 +478,7 @@ const TextGeneration = () => {
           <div className='mb-6'>
             <div className='flex justify-between items-center'>
               <div className='flex items-center space-x-3'>
-                <div className={cn(s.appIcon, 'shrink-0')}></div>
+                <div className={cn(s.appIcon, 'shrink-0')} style={{borderRadius: '5px'}}></div>
                 <div className='text-lg text-gray-800 font-semibold'>{APP_INFO.title}</div>
               </div>
               {!isPC && (
@@ -495,7 +495,7 @@ const TextGeneration = () => {
             </div>
             {APP_INFO.description && (
               <div>
-                <div className='mt-2 text-xs text-gray-500'>{APP_INFO.description}</div>
+                <div className='mt-2 text-xs text-gray-500' style={{textAlign: 'justify'}}>{APP_INFO.description}</div>
                 <div className="instructions" style={{ textAlign: 'left' }}>
                   <InstructionsPopup />
                 </div>
