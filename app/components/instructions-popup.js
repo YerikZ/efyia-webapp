@@ -79,8 +79,11 @@ const popupCloseButtonStyles = {
   borderRadius: '5px',
   border: 'none',
   backgroundColor: '#2596be',
-  margin: '10px', // margin to separate from other elements
   color: 'white',
   cursor: 'pointer',
+  position: 'relative',
+  left: '50%',           // Position at 50% from the left
+  transform: 'translateX(-50%)', // Shift back by half its own width
+  margin: '10px 0',      // Vertical margin only
 };
 export default InstructionsPopup;
