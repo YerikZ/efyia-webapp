@@ -1,12 +1,21 @@
 "use client";
 
 import Main from '@/app/components'
-import React, { useState, useEffect } from 'react';
-import Overlay from '@/app/components/overlay-page';
-import InstructionsPopup from '@/app/components/instructions-popup';
+import React, { useState } from 'react';
+import VideoModal from '@/app/components/additions/demo-video-popup';
 import { Analytics } from '@vercel/analytics/react';
 
 const App = () => {
+
+  const [isModalOpen, setIsModalOpen] = useState(true); // Start with modal open
+
+  const openModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
 
   // const [isAccessGranted, setIsAccessGranted] = useState(false);
 
@@ -51,13 +60,17 @@ const App = () => {
   // }
 
   return (
-    <div>            
+    <div>
       {/* <div className="countdown-timer" style={{ textAlign: 'center' }}>
         Session expires in: {formatTime(countdown)}
       </div> */}
       {/* <div className="instructions" style={{ textAlign: 'center' }}>
         <InstructionsPopup />
       </div> */}
+      <div className="App">        
+      {/* Video Modal */}
+        <VideoModal isOpen={isModalOpen} onClose={closeModal} />
+      </div>
       <Main />
       <Analytics />
     </div>
