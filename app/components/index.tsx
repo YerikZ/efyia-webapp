@@ -22,7 +22,7 @@ import Loading from '@/app/components/base/loading'
 import AppUnavailable from '@/app/components/app-unavailable'
 import { API_KEY, APP_ID, APP_INFO, DEFAULT_VALUE_MAX_LEN, IS_WORKFLOW } from '@/config'
 import { userInputsFormToPromptVariables } from '@/utils/prompt'
-import InstructionsPopup from '@/app/components/instructions-popup';
+import VideoModalHandler from '@/app/components/additions/demo-video-handler';
 
 const GROUP_SIZE = 5 // to avoid RPM(Request per minute) limit. The group task finished then the next group.
 enum TaskStatus {
@@ -478,7 +478,7 @@ const TextGeneration = () => {
           <div className='mb-6'>
             <div className='flex justify-between items-center'>
               <div className='flex items-center space-x-3'>
-                <div className={cn(s.appIcon, 'shrink-0')} style={{borderRadius: '5px'}}></div>
+                <div className={cn(s.appIcon, 'shrink-0')} style={{ borderRadius: '5px' }}></div>
                 <div className='text-lg text-gray-800 font-semibold'>{APP_INFO.title}</div>
               </div>
               {!isPC && (
@@ -495,9 +495,9 @@ const TextGeneration = () => {
             </div>
             {APP_INFO.description && (
               <div>
-                <div className='mt-2 text-xs text-gray-500' style={{textAlign: 'justify'}}>{APP_INFO.description}</div>
+                <div className='mt-2 text-xs text-gray-500' style={{ textAlign: 'justify' }}>{APP_INFO.description}</div>
                 <div className="instructions" style={{ textAlign: 'left' }}>
-                  <InstructionsPopup />
+                  <VideoModalHandler />
                 </div>
               </div>
             )}
